@@ -1,0 +1,9 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# Presentation
+/presentation/node_modules
+
+# Exercise
+/react-project/node_modules
+/react-project/coverage
+/react-project/build
