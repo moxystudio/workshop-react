@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Workshop React</title>
+
+		<meta name="description" content="Workshop - Introduction to React">
+		<meta name="author" content="MOXY - Vasco Santos and Jose Bateira">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- My CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- SLIDE 1 -->
+				<section>
+					<h2>Introduction to React</h2>
+					<div class="cover">
+						<div class="cover-left">
+							<div>
+								<div class="cover-authors-entry">
+									<div class="cover-authors-entry-name">
+										Vasco Santos
+									</div>
+									<div class="cover-authors-entry-github">
+										<a href="https://github.com/vasco-santos">
+											<img width="25" height="25" class="custom-img" data-src="img/logo-github.png">
+										</a>
+									</div>
+								</div>
+								<a href="mailto:vasco.santos@moxy.studio">vasco.santos@moxy.studio</a>
+							</div>
+							<div>
+								<div class="cover-authors-entry">
+									<div class="cover-authors-entry-name">
+										Jose Bateira
+									</div>
+									<div class="cover-authors-entry-github">
+										<a href="https://github.com/carsy">
+											<img width="25" height="25" class="custom-img" data-src="img/logo-github.png">
+										</a>
+									</div>
+								</div>
+								<a href="mailto:jose.bateira@moxy.studio">jose.bateira@moxy.studio</a>
+							</div>
+						</div>
+						<div class="cover-right">
+							<a href="https://moxy.studio/">
+								<img class="custom-img moxy-logo" width="120" height="120" data-src="img/logo-moxy.png">
+							</a>
+							<img class="custom-img neect-logo" width="auto" height="95" data-src="img/logo-neect.jpg">
+						</div>
+					</div>
+				</section>
+
+				<!-- SLIDE 2 -->
+				<section>
+					<!-- SLIDE 2 - 1 -->
+					<section>
+						<h2>What is React?</h2>
+						<ul>
+							<li>Open-source JavaScript library for rendering views</li>
+							<li>Initial release on March 2013 by Jordan Walke, a Facebook Software Engineer</li>
+							<li>Renders HTML written is JS in its own virtual DOM</li>
+						</ul>
+					</section>
+					<!-- SLIDE 2 - 2 -->
+					<section>
+						<h2>Why React?</h2>
+						<ul>
+							<li>Component Oriented development</li>
+							<li>Efficiency taking advantage of the Virtual DOM</li>
+							<li>Allows Server-side rendering</li>
+							<li>Excelent Maintenance</li>
+							<li>Bonus: React Native</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- SLIDE 3 -->
+				<section>
+					<!-- SLIDE 3 - 1 -->
+					<section>
+						<h2>How it works?</h2>
+						App explanation...
+					</section>
+					<!-- SLIDE 3 - 2 -->
+					<section>
+						<h3>Component</h3>
+					</section>
+					<!-- SLIDE 3 - 3 -->
+					<section>
+						Component State
+					</section>
+					<!-- SLIDE 3 - 3 -->
+					<section>
+						Component Props
+					</section>
+					<!-- SLIDE 3 - 4 -->
+					<section>
+						Life Cycle
+					</section>
+				</section>
+
+				<!-- SLIDE 4 -->
+				<section>
+					<h2 class="fragment">And let's code!</h2>
+					<img class="fragment custom-img" data-src="img/pratical.gif">
+				</section>
+
+				<!-- SLIDE 5 -->
+				<section>
+					<h2>Flux / Redux Need</h2>
+				</section>
+
+				<!-- SLIDE 6 -->
+				<section>
+					<h2>Open Source</h2>
+				</section>
+
+				<!-- SLIDE 7 -->
+				<section>
+					<h2>Thanks</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

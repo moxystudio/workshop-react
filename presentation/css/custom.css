@@ -1,0 +1,45 @@
+
+.cover {
+  display: flex;
+  margin-top: 20% !important;
+}
+
+.cover-left {
+    flex: 0 0 60%;
+    font-size: 30px !important;
+}
+
+.cover-right {
+  flex: 0 0 40%;
+}
+
+.cover-authors-entry {
+  display: flex;
+  justify-content: center;
+}
+
+.cover-authors-entry-name {
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.cover-authors-entry-github {
+  flex: 0 0 32px;
+  height: 100%;
+  width: 100%;
+}
+
+.custom-img {
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.moxy-logo {
+  margin-left: 8px !important;
+  margin-right: 10px !important;
+}
+
+.neect-logo {
+  margin-bottom: 10px !important;
+}
