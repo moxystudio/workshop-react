@@ -19,14 +19,16 @@ class RegisterForm extends Component {
         onSubmit={ this._handleSubmit }>
         <div className="home-register-inputs">
 
-          <div className="home-register-inputs-input">
-            username:
-            <input type="text" value={ this.state.username } onChange={ this._handleUsernameChange } />
+          <div className="home-register-input">
+            <div className="home-register-input-label">name: </div>
+            <input type="text" className="home-register-input-value"
+              value={ this.state.username } onChange={ this._handleUsernameChange } />
           </div>
 
-          <div className="home-register-inputs-input">
-            Pick your favorite emoji:
-            <select value={ this.state.value } onChange={ this._handleEmojiChange }>
+          <div className="home-register-input">
+            <div className="home-register-input-label">emoji: </div>
+            <select className="home-register-input-value"
+              value={ this.state.value } onChange={ this._handleEmojiChange }>
               <option value="grapefruit">Grapefruit</option>
               <option value="lime">Lime</option>
               <option value="coconut">Coconut</option>
@@ -34,9 +36,7 @@ class RegisterForm extends Component {
             </select>
           </div>
         </div>
-        <div className="home-register-submit">
-          <input type="submit" value="Submit" />
-        </div>
+        <input className="home-register-submit" type="submit" value="Get in" />
       </form>
     );
   }
