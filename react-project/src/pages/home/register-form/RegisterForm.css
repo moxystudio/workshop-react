@@ -1,5 +1,4 @@
 
-
 .home-register {
   width: 50%;
   margin: 0 auto;
@@ -9,21 +8,48 @@
   border-radius: 15px;
 }
 
-.home-register-inputs > div {
-  margin-bottom: 25px;
-}
-
 .home-register-input {
   display: flex;
+  margin-bottom: 25px;
+  height: 25px;
+  font-size: 24px;
+}
+
+.home-register-input-cel {
+  display: flex;
+  flex: 0 0 50%;
 }
 
 .home-register-input-label {
-  flex: 0 1 20%;
+  flex: 0 1 30%;
   text-align: left;
 }
 
 .home-register-input-value {
-  flex: 0 1 80%;
+  flex: 0 1 70%;
+}
+
+.home-register-input-emoji-label {
+  flex: 0 1 60%;
+  text-align: right;
+}
+
+.home-register-input-emoji-value {
+  flex: 0 1 20%;
+}
+
+.home-register-input-emoji-choose {
+  flex: 0 1 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-register-input-emoji-choose-cta {
+  margin: 0;
+  border: 0;
+  display: block;
+  height: 100%;
+  background: #fff;
 }
 
 .home-register-submit {
