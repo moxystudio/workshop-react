@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Picker from 'react-emojipicker'
-import './RegisterForm.css';
+import classnames from 'classnames';
+import './AccountForm.css';
 
-class RegisterForm extends Component {
+class AccountForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: undefined,
+      name: undefined,
       emoji: undefined,
       selectEmoji: false,
     };
@@ -17,7 +19,7 @@ class RegisterForm extends Component {
   }
 
   render() {
-    const { username, emoji, selectEmoji } = this.state;
+    const { name, emoji, selectEmoji } = this.state;
     return (
       <form className="home-register"
         onSubmit={ this._handleSubmit }>
@@ -25,7 +27,7 @@ class RegisterForm extends Component {
           <div className="home-register-input-cel">
             <div className="home-register-input-label">name: </div>
             <input type="text" className="home-register-input-value"
-              value={ username } onChange={ this._handleUsernameChange } />
+              value={ name } onChange={ this._handleUsernameChange } />
           </div>
           <div className="home-register-input-cel">
             <div className="home-register-input-emoji-label">emoji: </div>
@@ -34,15 +36,14 @@ class RegisterForm extends Component {
                 onClick={ this._handleEmojiChoose }>
                 pick
               </button>
-              <Picker modal visible={ selectEmoji }
-                onEmojiSelected={ this._handleEmojiChange } />
+              <div className={ classnames({ "home-register-input-emoji-choose-set": !selectEmoji }) }>
+                  <Picker modal visible={ selectEmoji }
+                    onEmojiSelected={ this._handleEmojiChange } />
+              </div>
             </div>
             <div className="home-register-input-emoji-value">
               {
-                emoji ?
-                  emoji.unicode
-                :
-                  null
+                emoji ? emoji.unicode : null
               }
             </div>
           </div>
@@ -67,9 +68,12 @@ class RegisterForm extends Component {
   }
 
   _handleEmojiChange(data) {
-    console.log(data);
     this.setState({ selectEmoji: false, emoji: data });
   }
 }
 
-export default RegisterForm;
+AccountForm.propTypes = {
+    authSuccess: PropTypes.func.isRequired,
+};
+
+export default AccountForm;

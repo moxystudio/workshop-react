@@ -44,6 +44,10 @@
   flex: 0 1 20%;
 }
 
+.home-register-input-emoji-choose-set {
+    pointer-events: none;
+}
+
 .home-register-input-emoji-choose {
   flex: 0 1 20%;
   display: flex;

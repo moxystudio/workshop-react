@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-emojipicker": "^1.0.3"
