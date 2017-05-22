@@ -12,6 +12,12 @@
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  .header {
+    height: 140px;
+  }
+}
+
 @keyframes header-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
