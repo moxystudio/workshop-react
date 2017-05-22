@@ -1,3 +1,6 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
 
 .home-register {
   width: 50%;
@@ -8,10 +11,13 @@
   border-radius: 15px;
 }
 
+/* ==========================================================================
+   Inputs customization
+   ========================================================================== */
+
 .home-register-input {
   display: flex;
   margin-bottom: 25px;
-  height: 25px;
   font-size: 24px;
 }
 
@@ -51,6 +57,31 @@
   height: 100%;
   background: #fff;
 }
+
+@media (max-width: 800px) {
+  .home-register-input {
+    margin-bottom: 0;
+    flex-direction: column;
+  }
+
+  .home-register-input-cel {
+      margin-bottom: 25px;
+      flex: 0 0 100%;
+  }
+
+  .home-register-input-emoji-label {
+    flex: 0 1 30%;
+    text-align: left;
+  }
+
+  .home-register-input-emoji-choose {
+    justify-content: flex-start;
+  }
+}
+
+/* ==========================================================================
+   Submit
+   ========================================================================== */
 
 .home-register-submit {
   width: 100%;
