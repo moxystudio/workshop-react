@@ -43,3 +43,17 @@
 .neect-logo {
   margin-bottom: 10px !important;
 }
+
+.double-img-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.double-img-wrapper > * {
+  flex: 0 0 50%;
+}
+
+.custom-img-wrapper {
+  max-height: 65vh;
+  overflow-y: scroll;
+}
