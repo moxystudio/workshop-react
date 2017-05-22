@@ -67,8 +67,10 @@ class AccountForm extends Component {
   }
 
   _handleSubmit(event) {
-    if (this.state.name && this.state.emoji) {
-      console.log('connect socket');
+    const { name, emoji } = this.state;
+
+    if (name && emoji) {
+      this.props.authTry(name, emoji.unicode);
     }
     event.preventDefault();
   }
@@ -88,7 +90,7 @@ class AccountForm extends Component {
 }
 
 AccountForm.propTypes = {
-    authSuccess: PropTypes.func.isRequired,
+    authTry: PropTypes.func.isRequired,
 };
 
 export default AccountForm;

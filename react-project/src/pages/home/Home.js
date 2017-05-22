@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import io from 'socket.io-client'
 // import MessageBox from './message-box/MessageBox';
 import AccountForm from './account-form/AccountForm';
 import './Home.css';
@@ -10,9 +11,15 @@ class Home extends Component {
       authenticated: false,
       emoji: undefined,
       name: undefined,
-      socket: undefined,
     };
-    this._authSuccess = this._authSuccess.bind(this);
+    this._authTry = this._authTry.bind(this);
+  }
+
+  componentDidMount() {
+    this._socket = io(`https://workshop-chat-server-zzbrwyrtcc.now.sh`);
+    this._socket.on('connection', () => {
+      console.log('connected');
+    });
   }
 
   render() {
@@ -20,7 +27,7 @@ class Home extends Component {
 
     return (
       <div className="home">
-        <AccountForm authSuccess={ this._authSuccess } />
+        <AccountForm authTry={ this._authTry } />
         {
             /*
               <MessageBox name={ name } emoji={ emoji } socket={ socket } />
@@ -30,8 +37,19 @@ class Home extends Component {
     );
   }
 
-  _authSuccess(name, emoji) {
-    this.setState({ name, emoji, authenticated: true });
+  _authTry(name, emoji) {
+    const user = { name, emoji };
+
+    // Send User info to Socket
+    this._socket.emit('userInfo', user);
+
+    this._socket.on('userConnected', user => {
+    	console.log(`# user ${user.name} connected`);
+      this.setState({ authenticated: true });
+    });
+
+    this.setState({ name, emoji });
+
   }
 }
 
