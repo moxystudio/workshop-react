@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Picker from 'react-emojipicker'
 import classnames from 'classnames';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 import './AccountForm.css';
 
 class AccountForm extends Component {
@@ -23,43 +26,55 @@ class AccountForm extends Component {
     return (
       <form className="home-register"
         onSubmit={ this._handleSubmit }>
-        <div className="home-register-input">
-          <div className="home-register-input-cel">
-            <div className="home-register-input-label">name: </div>
-            <input type="text" className="home-register-input-value"
-              value={ name } onChange={ this._handleUsernameChange } />
-          </div>
-          <div className="home-register-input-cel">
-            <div className="home-register-input-emoji-label">emoji: </div>
-            <div className="home-register-input-emoji-choose">
-              <button className="home-register-input-emoji-choose-cta"
-                onClick={ this._handleEmojiChoose }>
-                pick
-              </button>
-              <div className={ classnames({ "home-register-input-emoji-choose-set": !selectEmoji }) }>
-                  <Picker modal visible={ selectEmoji }
-                    onEmojiSelected={ this._handleEmojiChange } />
-              </div>
-            </div>
-            <div className="home-register-input-emoji-value">
-              {
-                emoji ? emoji.unicode : null
-              }
-            </div>
-          </div>
-        </div>
 
-        <input className="home-register-submit" type="submit" value="Get in" />
+        <MuiThemeProvider>
+          <Card>
+            <CardHeader title="Create account"
+            />
+            <CardText>
+              <div className="home-register-input">
+                <div className="home-register-input-cel">
+                  <div className="home-register-input-label">name: </div>
+                  <input type="text" className="home-register-input-value"
+                    value={ name } onChange={ this._handleUsernameChange } />
+                </div>
+                <div className="home-register-input-cel">
+                  <div className="home-register-input-emoji-label">emoji: </div>
+                  <div className="home-register-input-emoji-choose">
+                    <button className="home-register-input-emoji-choose-cta"
+                      onClick={ this._handleEmojiChoose }>
+                      pick
+                    </button>
+                    <div className={ classnames({ "home-register-input-emoji-choose-set": !selectEmoji }) }>
+                        <Picker modal visible={ selectEmoji }
+                          onEmojiSelected={ this._handleEmojiChange } />
+                    </div>
+                  </div>
+                  <div className="home-register-input-emoji-value">
+                    { emoji ? emoji.unicode : null }
+                  </div>
+                </div>
+              </div>
+            </CardText>
+            <CardActions>
+              <FlatButton type="submit" value="Submit" label="Get In" />
+            </CardActions>
+          </Card>
+        </MuiThemeProvider>
+
       </form>
     );
   }
 
   _handleSubmit(event) {
-    console.log('submit', event);
+    if (this.state.name && this.state.emoji) {
+      console.log('connect socket');
+    }
+    event.preventDefault();
   }
 
   _handleUsernameChange(event) {
-    console.log('change', event);
+    this.setState({ name: event.target.value });
   }
 
   _handleEmojiChoose(e) {

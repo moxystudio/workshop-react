@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MessageBox from './message-box/MessageBox';
+// import MessageBox from './message-box/MessageBox';
 import AccountForm from './account-form/AccountForm';
 import './Home.css';
 
@@ -8,19 +8,24 @@ class Home extends Component {
     super(props);
     this.state = {
       authenticated: false,
-      name: undefined,
       emoji: undefined,
+      name: undefined,
+      socket: undefined,
     };
     this._authSuccess = this._authSuccess.bind(this);
   }
 
   render() {
-    const { name, emoji } = this.props;
+    const { name, emoji, socket } = this.props;
 
     return (
       <div className="home">
         <AccountForm authSuccess={ this._authSuccess } />
-        <MessageBox name={ name } emoji={ emoji } />
+        {
+            /*
+              <MessageBox name={ name } emoji={ emoji } socket={ socket } />
+             */
+        }
       </div>
     );
   }
