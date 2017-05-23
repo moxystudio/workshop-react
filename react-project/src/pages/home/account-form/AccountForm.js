@@ -73,7 +73,6 @@ class AccountForm extends Component {
               </div>
             </CardText>
             <CardActions>
-              <FlatButton type="submit" value="Submit" label="Get In" />
             </CardActions>
           </Card>
         </MuiThemeProvider>
@@ -86,13 +85,9 @@ class AccountForm extends Component {
     const { name, emoji } = this.state;
 
     if (name && emoji) {
-      this.props.authTry(name, emoji.unicode);
+      this.props.authTry(name, emoji);
     }
     event.preventDefault();
-  }
-
-  _handleUsernameChange(event) {
-    this.setState({ name: event.target.value });
   }
 
   _handleEmojiChoose(e) {
@@ -102,6 +97,10 @@ class AccountForm extends Component {
 
   _handleEmojiChange(data) {
     this.setState({ selectEmoji: false, emoji: data });
+  }
+
+  _handleUsernameChange(event) {
+    this.setState({ name: event.target.value });
   }
 }
 
