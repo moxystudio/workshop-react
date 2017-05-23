@@ -13,7 +13,7 @@ const logger = {
 };
 
 io.on('connection', socket => {
-    let user;
+    let user = {};
 
     logger.event('connection');
 
@@ -27,9 +27,9 @@ io.on('connection', socket => {
     socket.on('message', data => {
         const message = { text: data.text, user };
 
-        logger.event('message', `${data.user.emoji}  ${data.user.name}: ${data.text}`);
+        logger.event('message', `${user.emoji}  ${user.name}: ${data.text}`);
 
-        socket.broadcast.emit('message', data);
+        socket.broadcast.emit('message', message);
     });
 
     socket.on('disconnect', () => {
