@@ -23,14 +23,30 @@ class AccountForm extends Component {
 
   render() {
     const { name, emoji, selectEmoji } = this.state;
+    const { authenticated } = this.props;
+
+    if (authenticated) {
+      return (
+        <div className="home-register">
+          <MuiThemeProvider>
+            <Card>
+              <CardHeader title="Ready to Go"/>
+              <CardText>
+                Welcome { name } { emoji.unicode }
+              </CardText>
+            </Card>
+          </MuiThemeProvider>
+        </div>
+      )
+    }
+
     return (
       <form className="home-register"
         onSubmit={ this._handleSubmit }>
 
         <MuiThemeProvider>
           <Card>
-            <CardHeader title="Create account"
-            />
+            <CardHeader title="Create account"/>
             <CardText>
               <div className="home-register-input">
                 <div className="home-register-input-cel">
@@ -91,6 +107,7 @@ class AccountForm extends Component {
 
 AccountForm.propTypes = {
     authTry: PropTypes.func.isRequired,
+    authenticated: PropTypes.bool.isRequired,
 };
 
 export default AccountForm;

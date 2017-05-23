@@ -17,20 +17,17 @@ class Home extends Component {
 
   componentDidMount() {
     this._socket = io(`https://workshop-chat-server-zzbrwyrtcc.now.sh`);
-    this._socket.on('connection', () => {
-      console.log('connected');
-    });
   }
 
   render() {
-    const { name, emoji, socket } = this.props;
+    const { authenticated, name, emoji } = this.state;
 
     return (
       <div className="home">
-        <AccountForm authTry={ this._authTry } />
+        <AccountForm authTry={ this._authTry } authenticated={ authenticated } />
         {
             /*
-              <MessageBox name={ name } emoji={ emoji } socket={ socket } />
+              <MessageBox name={ name } emoji={ emoji } socket={ this._socket } />
              */
         }
       </div>
@@ -42,14 +39,7 @@ class Home extends Component {
 
     // Send User info to Socket
     this._socket.emit('userInfo', user);
-
-    this._socket.on('userConnected', user => {
-    	console.log(`# user ${user.name} connected`);
-      this.setState({ authenticated: true });
-    });
-
-    this.setState({ name, emoji });
-
+    this.setState({ name, emoji, authenticated: true });
   }
 }
 
