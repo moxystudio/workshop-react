@@ -9,8 +9,7 @@ class Home extends Component {
     super(props);
     this.state = {
       authenticated: false,
-      emoji: undefined,
-      name: undefined,
+      user: undefined,
     };
     this._authTry = this._authTry.bind(this);
   }
@@ -20,14 +19,14 @@ class Home extends Component {
   }
 
   render() {
-    const { authenticated, name, emoji } = this.state;
+    const { authenticated, user } = this.state;
 
     return (
       <div className="home">
         <AccountForm authTry={ this._authTry } authenticated={ authenticated } />
         {
             /*
-              <MessageBox name={ name } emoji={ emoji } socket={ this._socket } />
+              <MessageBox user={ user } socket={ this._socket } />
              */
         }
       </div>
@@ -39,7 +38,7 @@ class Home extends Component {
 
     // Send User info to Socket
     this._socket.emit('userInfo', user);
-    this.setState({ name, emoji, authenticated: true });
+    this.setState({ user, authenticated: true });
   }
 }
 
