@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 import readline from 'readline';
 
-const prodHost = 'https://workshop-chat-server-zzbrwyrtcc.now.sh';
+const prodHost = 'https://ws-chat-server.now.sh';
 const host = process.env.HOST || 'http://127.0.0.1:3000';
 
 console.log('host', host);
