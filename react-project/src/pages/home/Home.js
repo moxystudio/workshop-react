@@ -10,25 +10,22 @@ class Home extends Component {
     this.state = {
       authenticated: false,
       user: undefined,
+      socket: undefined,
     };
     this._authTry = this._authTry.bind(this);
   }
 
   componentDidMount() {
-    this._socket = io(`https://ws-chat-server.now.sh`);
+    this.setState({ socket: io(`https://ws-chat-server.now.sh`) });
   }
 
   render() {
-    const { authenticated, user } = this.state;
+    const { authenticated, user, socket } = this.state;
 
     return (
       <div className="home">
-        <AccountForm authTry={ this._authTry } authenticated={ authenticated } />
-        {
-          /*
-            <MessageBox user={ user } socket={ this._socket } />
-          */
-        }
+        { socket ? <AccountForm authTry={ this._authTry } authenticated={ authenticated } /> : 'connecting...' }
+        { /* socket && user ? <MessageBox user={ user } socket={ socket } /> : null */ }
       </div>
     );
   }
@@ -36,8 +33,12 @@ class Home extends Component {
   _authTry(name, emoji) {
     const user = { name, emoji: emoji.unicode };
 
+    if (!this.state.socket) {
+        return;
+    }
+
     // Send User info to Socket
-    this._socket.emit('userInfo', user);
+    this.state.socket.emit('userInfo', user);
 
     this.setState({ user, authenticated: true });
   }
