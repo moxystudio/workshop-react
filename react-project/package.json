@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.5",
+    "material-ui": "^0.18.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-emojipicker": "^1.0.3"
+    "react-emojipicker": "^1.0.3",
+    "socket.io": "^2.0.1"
   },
   "devDependencies": {
     "react-scripts": "1.0.2"

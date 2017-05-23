@@ -5,8 +5,6 @@
 .home-register {
   width: 50%;
   margin: 0 auto;
-  padding: 25px;
-  background-color: #222;
   color: #fff;
   border-radius: 15px;
 }
@@ -16,14 +14,15 @@
    ========================================================================== */
 
 .home-register-input {
-  display: flex;
-  margin-bottom: 25px;
   font-size: 24px;
+}
+
+.home-register-input > div:not(:last-child) {
+  margin-bottom: 25px;
 }
 
 .home-register-input-cel {
   display: flex;
-  flex: 0 0 50%;
 }
 
 .home-register-input-label {
@@ -36,18 +35,22 @@
 }
 
 .home-register-input-emoji-label {
-  flex: 0 1 60%;
-  text-align: right;
+  flex: 0 1 30%;
+  text-align: left;
 }
 
 .home-register-input-emoji-value {
   flex: 0 1 20%;
 }
 
+.home-register-input-emoji-choose-set {
+    pointer-events: none;
+}
+
 .home-register-input-emoji-choose {
   flex: 0 1 20%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .home-register-input-emoji-choose-cta {
@@ -55,28 +58,7 @@
   border: 0;
   display: block;
   height: 100%;
-  background: #fff;
-}
-
-@media (max-width: 800px) {
-  .home-register-input {
-    margin-bottom: 0;
-    flex-direction: column;
-  }
-
-  .home-register-input-cel {
-      margin-bottom: 25px;
-      flex: 0 0 100%;
-  }
-
-  .home-register-input-emoji-label {
-    flex: 0 1 30%;
-    text-align: left;
-  }
-
-  .home-register-input-emoji-choose {
-    justify-content: flex-start;
-  }
+  width: 100%;
 }
 
 /* ==========================================================================
