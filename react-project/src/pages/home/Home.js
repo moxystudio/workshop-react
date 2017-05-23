@@ -15,7 +15,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this._socket = io(`https://workshop-chat-server-zzbrwyrtcc.now.sh`);
+    this._socket = io(`https://ws-chat-server.now.sh`);
   }
 
   render() {
