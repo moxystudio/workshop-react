@@ -34,10 +34,11 @@ class Home extends Component {
   }
 
   _authTry(name, emoji) {
-    const user = { name, emoji };
+    const user = { name, emoji: emoji.unicode };
 
     // Send User info to Socket
     this._socket.emit('userInfo', user);
+
     this.setState({ user, authenticated: true });
   }
 }

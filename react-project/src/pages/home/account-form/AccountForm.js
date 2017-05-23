@@ -73,6 +73,9 @@ class AccountForm extends Component {
               </div>
             </CardText>
             <CardActions>
+              <FlatButton type="submit" value="Submit">
+                Get In
+              </FlatButton>
             </CardActions>
           </Card>
         </MuiThemeProvider>
