@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client'
-import MessageBox from './message-box/MessageBox';
+// import MessageBox from './message-box/MessageBox';
 import AccountForm from './account-form/AccountForm';
 import './Home.css';
 
