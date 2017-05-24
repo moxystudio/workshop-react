@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client'
-// import MessageBox from './message-box/MessageBox';
+import MessageBox from './message-box/MessageBox';
 import AccountForm from './account-form/AccountForm';
 import './Home.css';
 
@@ -25,7 +25,7 @@ class Home extends Component {
     return (
       <div className="home">
         { socket ? <AccountForm authTry={ this._authTry } authenticated={ authenticated } /> : 'connecting...' }
-        { /* socket && user ? <MessageBox user={ user } socket={ socket } /> : null */ }
+        { socket && user ? <MessageBox user={ user } socket={ socket } /> : null }
       </div>
     );
   }
